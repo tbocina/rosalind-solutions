@@ -9,10 +9,10 @@ def rosalindprint(res):
     return text.strip()
 
 
-def kmersfrequency(text, k):
+def kmersindicies(text, k):
     D = dict()
     for i in range(0, len(text) - k + 1):
-        tmp = text[i : (i + k)]
+        tmp = text[i: (i + k)]
         try:
             D[tmp].append(i)
         except KeyError:
@@ -42,7 +42,6 @@ def ApproximatePatternMatching(text, pattern, d):
 
 
 if __name__ == "__main__":
-
     with open("./rosalind_ba1h.txt", "r") as myfile:
         pattern = myfile.readline().replace("\n", "")
         text = myfile.readline().replace("\n", "")
