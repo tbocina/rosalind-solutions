@@ -13,7 +13,7 @@ def clump_finding(Genome, k, L, t):
     res = []
     for i in range(0, len(Genome) - L + 1):
         for j in range(i, i + L - k):
-            if Genome[i:i + L].count(Genome[j:j + k]) == t:
+            if Genome[i:i + L].count(Genome[j:j + k]) >= t:
                 if Genome[j:j + k] not in res:
                     res.append(Genome[j:j + k])
     return res
