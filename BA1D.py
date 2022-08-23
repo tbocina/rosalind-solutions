@@ -13,7 +13,7 @@ def rosalindprint(res):
 def find_starting_positions(Pattern, Genome):
     positions = []
     k = len(Pattern)
-    for i in range(0, len(Genome)):
+    for i in range(0, len(Genome) - k + 1):
         if Genome[i:i + k] == Pattern:
             positions.append(i)
     return positions
