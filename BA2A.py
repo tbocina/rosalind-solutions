@@ -14,16 +14,10 @@ def rosalindprint(res, newline=False):
     return text.strip()
 
 
-def kmer(text, i, k):
-    # substring of text from i_th position for the next k letters
-    return text[i:(i + k)]
-
-
 def kmersindicies(text, k):
-    # find indicies of all k-mers in text
     D = dict()
     for i in range(0, len(text) - k + 1):
-        tmp = kmer(text, i, k)
+        tmp = text[i: (i + k)]
         try:
             D[tmp].append(i)
         except KeyError:
